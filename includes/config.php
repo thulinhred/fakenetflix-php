@@ -1,0 +1,15 @@
+<?php
+ob_start(); //Turn on output buffering
+session_start();
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+
+try {
+    $conn = new PDO("mysql:dbname=neftflix;host=localhost", "root", "");
+    $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+}
+
+catch(PDOException $e) {
+    exit("Connection failed: " . $e->getMessage());
+}
+
+?>
